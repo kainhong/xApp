@@ -1,33 +1,24 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "trunk", ".", "{D1533FAE-4D00-48F3-BF37-53867267DB6A}"
-	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
-		Debug.AspNetCompiler.VirtualPath = "/trunk"
-		Debug.AspNetCompiler.PhysicalPath = "..\trunk\"
-		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\trunk\"
-		Debug.AspNetCompiler.Updateable = "true"
-		Debug.AspNetCompiler.ForceOverwrite = "true"
-		Debug.AspNetCompiler.FixedNames = "false"
-		Debug.AspNetCompiler.Debug = "True"
-		Release.AspNetCompiler.VirtualPath = "/trunk"
-		Release.AspNetCompiler.PhysicalPath = "..\trunk\"
-		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\trunk\"
-		Release.AspNetCompiler.Updateable = "true"
-		Release.AspNetCompiler.ForceOverwrite = "true"
-		Release.AspNetCompiler.FixedNames = "false"
-		Release.AspNetCompiler.Debug = "False"
-		VWDPort = "30995"
-	EndProjectSection
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xApp.Web", "xApp.Web\xApp.Web.csproj", "{9B72C5BC-817B-4C0D-9B61-F7118F011F97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMS.Web", "H:\Work\Project\JS\google\wms\trunk\WMS.Web\WMS.Web.csproj", "{6A5D0054-6F72-468D-B08F-F4C104988222}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1533FAE-4D00-48F3-BF37-53867267DB6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1533FAE-4D00-48F3-BF37-53867267DB6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B72C5BC-817B-4C0D-9B61-F7118F011F97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B72C5BC-817B-4C0D-9B61-F7118F011F97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B72C5BC-817B-4C0D-9B61-F7118F011F97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B72C5BC-817B-4C0D-9B61-F7118F011F97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A5D0054-6F72-468D-B08F-F4C104988222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A5D0054-6F72-468D-B08F-F4C104988222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A5D0054-6F72-468D-B08F-F4C104988222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A5D0054-6F72-468D-B08F-F4C104988222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
