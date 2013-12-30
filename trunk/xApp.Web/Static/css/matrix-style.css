@@ -184,6 +184,27 @@ hr{ border-top-color:#dadada;}
 	display: block;
 }
 
+.nav-tabs
+{
+    border-color: #fff;
+    float:left;
+    width:100%;
+}
+.tabbable
+{
+    float:left;
+    width:100%;
+    height:100%;
+}
+.tab-content
+{
+    clear:both;
+    display:block;
+}
+.nav
+{
+    margin-bottom:0px;
+}
 .accordion-inner > ul li a {
 	padding: 10px 0 10px 25px;
 	display: block;

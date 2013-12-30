@@ -186,6 +186,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <Content Include="Static\app\controllers\index.controller.js" />
+    <Content Include="Static\app\main.js" />
+    <Content Include="Static\app\services\config.js" />
+    <Content Include="Static\app\services\routeResolver.js" />
     <Content Include="Static\css\bootstrap-responsive.min.css" />
     <Content Include="Static\css\bootstrap.min.css" />
     <Content Include="Static\css\matrix-login.css" />
@@ -193,12 +196,18 @@
     <Content Include="Static\css\matrix-style.css" />
     <Content Include="Static\font-awesome\css\font-awesome.css" />
     <Content Include="Static\images\logo.png" />
+    <Content Include="Static\index.html" />
     <Content Include="Static\lib\angular-resource.js" />
     <Content Include="Static\lib\angular-route.js" />
     <Content Include="Static\lib\angular.js" />
     <Content Include="Static\lib\bootstrap.min.js" />
     <Content Include="Static\lib\jquery.min.js" />
+    <Content Include="Static\lib\matrix.js" />
+    <Content Include="Static\lib\q.min.js" />
     <Content Include="Static\lib\require.js" />
+    <Content Include="Static\lib\to%24q.js" />
+    <Content Include="Static\lib\ui-bootstrap-0.7.0.js" />
+    <Content Include="Static\lib\ui-bootstrap-tpls-0.7.0.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -210,7 +219,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Static\app\directives\" />
     <Folder Include="Static\app\filters\" />
   </ItemGroup>
   <ItemGroup>
@@ -242,6 +250,7 @@
     <Content Include="Static\font-awesome\font\fontawesome-webfont.eot%40" />
     <Content Include="Static\font-awesome\font\fontawesome-webfont.ttf" />
     <Content Include="Static\font-awesome\font\fontawesome-webfont.woff" />
+    <Content Include="Static\app\directives\ui.components.js" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

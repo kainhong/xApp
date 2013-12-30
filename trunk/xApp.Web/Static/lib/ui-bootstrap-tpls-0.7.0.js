@@ -278,7 +278,8 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
     replace: true,
     require: '^accordionGroup',
     compile: function(element, attr, transclude) {
-      return function link(scope, element, attr, accordionGroupCtrl) {
+        return function link(scope, element, attr, accordionGroupCtrl) {
+           
         // Pass the heading to the accordion-group controller
         // so that it can be transcluded into the right place in the template
         // [The second parameter to transclude causes the elements to be cloned so that they work in ng-repeat]
@@ -298,9 +299,11 @@ angular.module('ui.bootstrap.accordion', ['ui.bootstrap.collapse'])
   return {
     require: '^accordionGroup',
     link: function(scope, element, attr, controller) {
-      scope.$watch(function() { return controller[attr.accordionTransclude]; }, function(heading) {
+        scope.$watch(function () { return controller[attr.accordionTransclude]; }, function (heading) {
+            
         if ( heading ) {
-          element.html('');
+            element.html('');
+            
           element.append(heading);
         }
       });

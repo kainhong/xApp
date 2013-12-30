@@ -1,9 +1,11 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "xApp.Web", "xApp.Web\xApp.Web.csproj", "{9B72C5BC-817B-4C0D-9B61-F7118F011F97}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WMS.Web", "H:\Work\Project\JS\google\wms\trunk\WMS.Web\WMS.Web.csproj", "{6A5D0054-6F72-468D-B08F-F4C104988222}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomerManager", "..\..\CustomerManager\trunk\CustomerManager\CustomerManager.csproj", "{9070F180-9D2C-44CD-86C7-0EFB3918D2F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +21,10 @@ Global
 		{6A5D0054-6F72-468D-B08F-F4C104988222}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A5D0054-6F72-468D-B08F-F4C104988222}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A5D0054-6F72-468D-B08F-F4C104988222}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9070F180-9D2C-44CD-86C7-0EFB3918D2F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9070F180-9D2C-44CD-86C7-0EFB3918D2F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9070F180-9D2C-44CD-86C7-0EFB3918D2F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9070F180-9D2C-44CD-86C7-0EFB3918D2F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
