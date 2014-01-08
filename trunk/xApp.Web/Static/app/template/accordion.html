@@ -1,0 +1,11 @@
+﻿<a href="#" class="visible-phone"><i class="icon icon-inbox"></i>Widgets</a>
+<ul>
+    <li class="submenu" ng-repeat="m in menus">
+        <a href="#"><i class="icon icon-home"></i><span>{{m.caption}}</span></a>
+        <ul>
+            <li ng-repeat="s in m.children">
+                <a href="#" ng-click="click(s)">{{s.caption}}</a>
+            </li>
+        </ul>
+    </li>
+</ul>

@@ -1,0 +1,433 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="xappModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.1" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="xappModelStoreContainer">
+          <EntitySet Name="application" EntityType="xappModel.Store.application" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="category" EntityType="xappModel.Store.category" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="categoryitem" EntityType="xappModel.Store.categoryitem" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="department" EntityType="xappModel.Store.department" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="menu" EntityType="xappModel.Store.menu" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="module" EntityType="xappModel.Store.module" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="role" EntityType="xappModel.Store.role" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="rolemenu" EntityType="xappModel.Store.rolemenu" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="user" EntityType="xappModel.Store.user" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="userdepartment" EntityType="xappModel.Store.userdepartment" store:Type="Tables" Schema="xapp" />
+          <EntitySet Name="userrole" EntityType="xappModel.Store.userrole" store:Type="Tables" Schema="xapp" />
+        </EntityContainer>
+        <EntityType Name="application">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="20" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Application" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="categoryitem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="IsDefault" Type="bit" />
+          <Property Name="Order" Type="smallint" />
+          <Property Name="CategoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Caption" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="ParentId" Type="int" Nullable="false" />
+          <Property Name="ModuleId" Type="int" Nullable="false" />
+          <Property Name="Application" Type="varchar" MaxLength="20" />
+          <Property Name="OrderNO" Type="int" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="Creator" Type="varchar" MaxLength="50" />
+          <Property Name="Application" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="Icon" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="role">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Name="Code" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="250" />
+          <Property Name="Application" Type="varchar" MaxLength="20" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="rolemenu">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="ModuleId" Type="int" Nullable="false" />
+          <Property Name="Flag" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="varchar" Nullable="false" MaxLength="60" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="Password" Type="varchar" Nullable="false" MaxLength="25" />
+          <Property Name="Gender" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="userdepartment">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="DepartmentId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="userrole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="RoleId" Type="int" Nullable="false" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="xapp" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="xApp" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Applications" EntityType="xapp.Application" />
+          <EntitySet Name="Categories" EntityType="xapp.Category" />
+          <EntitySet Name="CategoryItems" EntityType="xapp.CategoryItem" />
+          <EntitySet Name="Departments" EntityType="xapp.Department" />
+          <EntitySet Name="Menus" EntityType="xapp.Menu" />
+          <EntitySet Name="Modules" EntityType="xapp.Module" />
+          <EntitySet Name="Roles" EntityType="xapp.Role" />
+          <EntitySet Name="Rolemenus" EntityType="xapp.Rolemenu" />
+          <EntitySet Name="Users" EntityType="xapp.User" />
+          <EntitySet Name="UserDepartments" EntityType="xapp.UserDepartment" />
+          <EntitySet Name="UserRoles" EntityType="xapp.UserRole" />
+        </EntityContainer>
+        <EntityType Name="Application">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="String" Name="Code" Nullable="false" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Description" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="String" Name="Icon" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Description" />
+          <Property Type="String" Name="Application" />
+        </EntityType>
+        <EntityType Name="CategoryItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Code" />
+          <Property Type="String" Name="Name" />
+          <Property Type="Boolean" Name="IsDefault" />
+          <Property Type="Int16" Name="Order" />
+          <Property Type="Int32" Name="CategoryId" />
+        </EntityType>
+        <EntityType Name="Department">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Description" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Menu">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Caption" />
+          <Property Type="String" Name="Description" />
+          <Property Type="Int32" Name="ParentId" Nullable="false" />
+          <Property Type="Int32" Name="ModuleId" Nullable="false" />
+          <Property Type="String" Name="Application" />
+          <Property Type="Int32" Name="OrderNO" Nullable="false" />
+          <Property Type="String" Name="Icon" />
+        </EntityType>
+        <EntityType Name="Module">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Description" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <Property Type="DateTime" Name="CreateDate" Nullable="false" />
+          <Property Type="DateTime" Name="UpdateDate" Nullable="false" />
+          <Property Type="String" Name="Creator" />
+          <Property Type="String" Name="Application" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+          <Property Type="String" Name="Icon" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Code" />
+          </Key>
+          <Property Type="String" Name="Code" Nullable="false" />
+          <Property Type="String" Name="Name" />
+          <Property Type="String" Name="Description" />
+          <Property Type="String" Name="Application" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rolemenu">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="ModuleId" />
+          </Key>
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+          <Property Type="Int32" Name="ModuleId" Nullable="false" />
+          <Property Type="Int32" Name="Flag" Nullable="false" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Account" Nullable="false" />
+          <Property Type="String" Name="FirstName" />
+          <Property Type="String" Name="LastName" />
+          <Property Type="String" Name="Password" Nullable="false" />
+          <Property Type="Int32" Name="Gender" Nullable="false" />
+          <Property Type="Int32" Name="Status" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserDepartment">
+          <Key>
+            <PropertyRef Name="DepartmentId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Type="Int32" Name="DepartmentId" Nullable="false" />
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserId" />
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Type="Int32" Name="UserId" Nullable="false" />
+          <Property Type="Int32" Name="RoleId" Nullable="false" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="xappModelStoreContainer" CdmEntityContainer="xApp">
+          <EntitySetMapping Name="Applications">
+            <EntityTypeMapping TypeName="xapp.Application">
+              <MappingFragment StoreEntitySet="application">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="xapp.Category">
+              <MappingFragment StoreEntitySet="category">
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoryItems">
+            <EntityTypeMapping TypeName="xapp.CategoryItem">
+              <MappingFragment StoreEntitySet="categoryitem">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="IsDefault" ColumnName="IsDefault" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departments">
+            <EntityTypeMapping TypeName="xapp.Department">
+              <MappingFragment StoreEntitySet="department">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Menus">
+            <EntityTypeMapping TypeName="xapp.Menu">
+              <MappingFragment StoreEntitySet="menu">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="OrderNO" ColumnName="OrderNO" />
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Caption" ColumnName="Caption" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Modules">
+            <EntityTypeMapping TypeName="xapp.Module">
+              <MappingFragment StoreEntitySet="module">
+                <ScalarProperty Name="Icon" ColumnName="Icon" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="Creator" ColumnName="Creator" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="xapp.Role">
+              <MappingFragment StoreEntitySet="role">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Application" ColumnName="Application" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rolemenus">
+            <EntityTypeMapping TypeName="xapp.Rolemenu">
+              <MappingFragment StoreEntitySet="rolemenu">
+                <ScalarProperty Name="Flag" ColumnName="Flag" />
+                <ScalarProperty Name="ModuleId" ColumnName="ModuleId" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="xapp.User">
+              <MappingFragment StoreEntitySet="user">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserDepartments">
+            <EntityTypeMapping TypeName="xapp.UserDepartment">
+              <MappingFragment StoreEntitySet="userdepartment">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="DepartmentId" ColumnName="DepartmentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="xapp.UserRole">
+              <MappingFragment StoreEntitySet="userrole">
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="xapp.Application" Width="1.5" PointX="0.75" PointY="0.75" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="xapp.Category" Width="1.5" PointX="2.75" PointY="0.75" Height="1.9700325520833388" />
+        <EntityTypeShape EntityType="xapp.CategoryItem" Width="1.5" PointX="0.75" PointY="3" Height="2.1610522460937531" />
+        <EntityTypeShape EntityType="xapp.Department" Width="1.5" PointX="2.75" PointY="3.25" Height="1.7790128580729174" />
+        <EntityTypeShape EntityType="xapp.Menu" Width="1.5" PointX="4.75" PointY="3.75" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="xapp.Module" Width="1.5" PointX="4.75" PointY="0.625" Height="2.7341113281250031" />
+        <EntityTypeShape EntityType="xapp.Role" Width="1.5" PointX="0.75" PointY="6.125" Height="1.9700325520833388" />
+        <EntityTypeShape EntityType="xapp.Rolemenu" Width="1.5" PointX="6.625" PointY="0.75" Height="1.5879931640625031" />
+        <EntityTypeShape EntityType="xapp.User" Width="1.5" PointX="2.75" PointY="5.375" Height="2.3520719401041674" />
+        <EntityTypeShape EntityType="xapp.UserDepartment" Width="1.5" PointX="4.75" PointY="6.5" Height="1.3969734700520746" />
+        <EntityTypeShape EntityType="xapp.UserRole" Width="1.5" PointX="6.625" PointY="2.625" Height="1.3969734700520746" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

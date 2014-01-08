@@ -1,0 +1,8 @@
+J:\Projects\wms\trunk\xApp.Services.Interface\bin\Debug\xApp.Services.Interface.dll
+J:\Projects\wms\trunk\xApp.Services.Interface\bin\Debug\xApp.Services.Interface.pdb
+J:\Projects\wms\trunk\xApp.Services.Interface\obj\Debug\xApp.Services.Interface.dll
+J:\Projects\wms\trunk\xApp.Services.Interface\obj\Debug\xApp.Services.Interface.pdb
+J:\Projects\xApp\trunk\xApp.Services.Interface\bin\Debug\xApp.Services.Interface.dll
+J:\Projects\xApp\trunk\xApp.Services.Interface\bin\Debug\xApp.Services.Interface.pdb
+J:\Projects\xApp\trunk\xApp.Services.Interface\obj\Debug\xApp.Services.Interface.dll
+J:\Projects\xApp\trunk\xApp.Services.Interface\obj\Debug\xApp.Services.Interface.pdb

@@ -1,0 +1,31 @@
+﻿@model xApp.Web.Models.Module
+
+@{
+    ViewBag.Title = ViewData.Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 ng-controller="app.Ctrl">
+    @ViewData.Model.Id
+</h2>
+
+
+@section scripts{
+    <script src="~/static/lib/require.js"></script>
+    <script>
+        require.config({
+            baseUrl: '/static',
+            urlArgs: 'v=1.0'
+        });
+
+        require(
+        [
+            'app/controllers/view.controller',
+            'view/module/controller'
+        ],
+        function () {
+            angular.bootstrap(document, ['app']);
+        });
+
+    </script>
+}

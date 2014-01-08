@@ -12,40 +12,26 @@ body {
 #search input[type=text]:focus {
 	color: #777777;
 }
-.accordion
-{
-    margin-top:0px;
+#sidebar > ul{border-bottom: 1px solid #37414b}
+#sidebar > ul > li {
+	border-top: 1px solid #37414b; border-bottom: 1px solid #1f262d;
 }
-.accordion .accordion-group {border-top:0;border-left:0px;border-top:0px;border-right:0px;border-bottom: 1px solid #37414b;-webkit-border-radius:0px;}
-
-.accordion .accordion-group .accordion-heading {
-	border-top: 0px solid #37414b; border-bottom: 1px solid #1f262d;
-}
-.accordion .accordion-group .active {
+#sidebar > ul > li.active {
     background-color: #27a9e3; border-bottom: 1px solid #27a9e3;  border-top: 1px solid #27a9e3;
 }
-.accordion1 > ul > li.active a{ color:#fff; text-decoration:none;}
+#sidebar > ul > li.active a{ color:#fff; text-decoration:none;}
 
-.accordion1 > ul > li > a > .label {
+#sidebar > ul > li > a > .label {
 	background-color:#F66;
 }
-
-.accordion-heading > a:hover {
+#sidebar > ul > li > a:hover {
 	background-color: #27a9e3; color:#fff;
 }
-.accordion-inner
-{
-    padding:0px;
-    border-top:0px;
-}
-.accordion-inner >ul {
-    list-style:none;
+#sidebar > ul li ul {
 	background-color: #1e242b;
-    margin:0px;
 }
-
-.accordion-inner > ul li a{ color:#939da8}
-.accordion-inner > ul li a:hover, .accordion-inner > ul li.active a {
+#sidebar > ul li ul li a{ color:#939da8}
+#sidebar > ul li ul li a:hover, #sidebar > ul li ul li.active a {
 	color: #fff;
 	background-color: #28b779;
 }
@@ -66,7 +52,7 @@ body {
 .top_message:hover{ background:#000}
 .rightzero{ right:0px; display:none;}
 @media (max-width: 480px) {
-	.accordion > a {
+	#sidebar > a {
 		background:#27a9e3;
 		
 	}
@@ -74,9 +60,9 @@ body {
 }
 @media (min-width: 768px) and (max-width: 970px) {.quick-actions_homepage .quick-actions li{ min-width:20.5%;}}
 @media (min-width: 481px) and (max-width: 767px) {
-	.accordion > ul ul:before {
+	#sidebar > ul ul:before {
 	}
-	.accordion > ul ul:after {
+	#sidebar > ul ul:after {
 		border-right: 6px solid #222222;
     }
 	.quick-actions_homepage .quick-actions li{ min-width:47%;}

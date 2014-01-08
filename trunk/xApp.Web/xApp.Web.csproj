@@ -40,30 +40,16 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="MySql.Data, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySql.Data.6.7.4\lib\net40\MySql.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\MySQL.Data.Entities.6.7.4.1\lib\net40\MySql.Data.Entity.dll</HintPath>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Newtonsoft.Json.5.0.8\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -71,12 +57,6 @@
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
-    </Reference>
     <Reference Include="System.Net.Http">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Net.Http.2.0.20710.0\lib\net40\System.Net.Http.dll</HintPath>
@@ -110,10 +90,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <Private>True</Private>
-      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
@@ -125,60 +101,11 @@
     <Compile Include="Controllers\MenuController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\ViewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Application.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Category.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CategoryItem.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Department.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Menu.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Module.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Role.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Rolemenu.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\User.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserDepartment.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\UserRole.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\ApplicationView.cs" />
-    <Compile Include="ViewModel\MenuView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -186,28 +113,53 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Content Include="Global.asax" />
     <Content Include="Static\app\controllers\index.controller.js" />
+    <Content Include="Static\app\controllers\base.controller.js" />
+    <Content Include="Static\app\controllers\view.controller.js" />
     <Content Include="Static\app\main.js" />
     <Content Include="Static\app\services\config.js" />
     <Content Include="Static\app\services\routeResolver.js" />
+    <Content Include="Static\app\template\accordion.html" />
+    <Content Include="Static\app\view.app.js" />
     <Content Include="Static\css\bootstrap-responsive.min.css" />
     <Content Include="Static\css\bootstrap.min.css" />
     <Content Include="Static\css\matrix-login.css" />
     <Content Include="Static\css\matrix-media.css" />
     <Content Include="Static\css\matrix-style.css" />
+    <Content Include="Static\css\pqgrid.css" />
+    <Content Include="Static\css\pqgrid.office.css" />
     <Content Include="Static\font-awesome\css\font-awesome.css" />
-    <Content Include="Static\images\logo.png" />
+    <Content Include="Static\css\images\column-header-bg.png" />
+    <Content Include="Static\css\images\column-header-over-bg.gif" />
+    <Content Include="Static\css\images\cross.png" />
+    <Content Include="Static\css\images\horiz-bg.png" />
+    <Content Include="Static\css\images\horiz-slider-bg.png" />
+    <Content Include="Static\css\images\loading.gif" />
+    <Content Include="Static\css\images\logo.png" />
+    <Content Include="Static\css\images\page-first-gray.gif" />
+    <Content Include="Static\css\images\page-last-gray.gif" />
+    <Content Include="Static\css\images\page-next-gray.gif" />
+    <Content Include="Static\css\images\page-prev-gray.gif" />
+    <Content Include="Static\css\images\Refresh.gif" />
+    <Content Include="Static\css\images\sort_asc.gif" />
+    <Content Include="Static\css\images\sort_desc.gif" />
+    <Content Include="Static\css\images\sprite.png" />
+    <Content Include="Static\css\images\tick.png" />
+    <Content Include="Static\css\images\vert-bg.png" />
+    <Content Include="Static\css\images\vert-slider-bg.png" />
     <Content Include="Static\index.html" />
     <Content Include="Static\lib\angular-resource.js" />
     <Content Include="Static\lib\angular-route.js" />
     <Content Include="Static\lib\angular.js" />
     <Content Include="Static\lib\bootstrap.min.js" />
     <Content Include="Static\lib\jquery.min.js" />
-    <Content Include="Static\lib\matrix.js" />
+    <Content Include="Static\lib\pqgrid.js" />
     <Content Include="Static\lib\q.min.js" />
     <Content Include="Static\lib\require.js" />
     <Content Include="Static\lib\to%24q.js" />
     <Content Include="Static\lib\ui-bootstrap-0.7.0.js" />
     <Content Include="Static\lib\ui-bootstrap-tpls-0.7.0.js" />
+    <Content Include="Static\view\module\controller.js" />
+    <Content Include="Static\view\module\index.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -220,25 +172,12 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Static\app\filters\" />
+    <Folder Include="Static\images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="Models\Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Models\Model1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.Context.cs</LastGenOutput>
-    </None>
-    <None Include="Models\Model1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Model1.cs</LastGenOutput>
-    </None>
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
@@ -250,10 +189,28 @@
     <Content Include="Static\font-awesome\font\fontawesome-webfont.eot%40" />
     <Content Include="Static\font-awesome\font\fontawesome-webfont.ttf" />
     <Content Include="Static\font-awesome\font\fontawesome-webfont.woff" />
-    <Content Include="Static\app\directives\ui.components.js" />
+    <Content Include="Static\app\directives\ui.component.js" />
+    <Content Include="Views\View\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\xApp.Entity\xApp.Entity.csproj">
+      <Project>{4b830192-643a-49ab-a5f7-42d8a50d4b38}</Project>
+      <Name>xApp.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xApp.Services.Interface\xApp.Services.Interface.csproj">
+      <Project>{184bc418-2fb5-4ec2-9099-30b45c7a74c4}</Project>
+      <Name>xApp.Services.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\xApp.Services\xApp.Services.csproj">
+      <Project>{f8afe621-66ee-4829-840f-8e9a7363ddab}</Project>
+      <Name>xApp.Services</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Static\app\directives\ui.accordion.js" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -269,16 +226,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>57096</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56966/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>

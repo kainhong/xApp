@@ -61,42 +61,32 @@
     <!--close-top-serch-->
 
     <!--sidebar-menu-->
+    <div accordion on-click="menuClick(item)" id="sidebar"></div>
 
-    <accordion close-others="false" class="sidebar" id="sidebar">
-        <accordion-group  ng-repeat="menu in menus">
-            <accordion-heading>
-                <i class="icon icon-info-sign"></i> 
-                    <span>{{menu.text}}</span> 
-                    <span class="label label-important">4</span>
-            </accordion-heading>    
-            <ul>
-                <li ng-repeat="s in menu.children" ng-click="openModule(s)">
-                    <a href="#">{{s.text}}</a>
-                </li>
-            </ul>
-        </accordion-group>      
-    </accordion>
     <!--close-sidebar-menu-->
 
     <!--main-container-part-->
     <div id="content">
-        <tabset>
-            <tab ng-repeat="tab in tabs" active="tab.active" disable="tab.disable">
-                <tab-heading>
-                    <li class="icon-home">{{tab.title}}</li>
-                </tab-heading>
-                <iframe src="/static/index.html" frameborder="0" border="0" 
-                    marginwidth="0" marginheight="0" scrolling="yes" 
-                    width="100%" height="100%"></iframe>
-            </tab>
-        </tabset>
+        <div id="content-header">
+            <tabset>
+                <tab ng-repeat="tab in tabs" active="tab.active" disable="tab.disable">
+                    <tab-heading>
+                        <i class="icon-home">
+                            {{tab.title}} 
+                            <button class="close" ng-click="closeTab(tab)" type="button" title="Remove this page">×</button>
+                        </i>
+                    </tab-heading>
+                    <iframe src="/static/index.html" frameborder="0" border="0" 
+                        marginwidth="0" marginheight="0" scrolling="yes" width="100%" 
+                        height="100%"></iframe>
+                </tab>
+            </tabset>
+        </div>
     </div>
 
     <script src="~/Static/lib/ui-bootstrap-tpls-0.7.0.js"></script>
-    <script src="~/static/lib/q.min.js"></script>
-    <script src="~/static/lib/to$q.js"></script>
 
-@*    <script src="~/Static/app/services/core.service.js"></script>
+    @*    <script src="~/Static/app/services/core.service.js"></script>
     <script src="~/Static/app/controllers/index.controller.js"></script>
     <script>
         angular.bootstrap(document.body, ['app']);
